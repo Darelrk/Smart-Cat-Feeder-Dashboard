@@ -9,5 +9,6 @@ export type SensorData = {
     id: number
     created_at: string
     distance: number
-    status: string
+    status?: string
+    servo_status: string
 }
