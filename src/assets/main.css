@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+    /* Soft Pastel Theme - Cat Inspired */
+    --bg-primary: #FAFAFA;
+    --accent-orange: #F6AD55;
+    --accent-soft: #FDEEDC;
+    --text-dark: #2D3748;
+    --text-muted: #718096;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+}
