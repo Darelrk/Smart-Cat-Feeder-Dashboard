@@ -67,13 +67,10 @@ const sendPing = async () => {
     if (error) console.error('Ping falied:', error);
 
     // 2. Wait for response (PONG) logic is handled by realtime subscription
-    // If no data arrives within 10s, mark as offline
+    // If responseTimer triggers, it means NO PONG received -> OFFLINE
     responseTimer = setTimeout(() => {
-        const timeSinceLastData = Date.now() - new Date(latestData.value?.created_at || 0).getTime();
-        // If data is stale (> 60s), consider offline
-        if (timeSinceLastData > 60000) {
-            isConnected.value = false;
-        }
+        console.log("Ping Timeout: No response from device.");
+        isConnected.value = false; 
     }, pingTimeout);
 }
 
