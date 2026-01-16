@@ -101,7 +101,7 @@ onMounted(() => {
     // 2. Listen for DEVICE STATUS Updates (Online Status)
     // Listens for UPDATE because IoT device is UPSERTING (overwriting) the row
     supabase.channel('public:device_status')
-        .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'device_status' }, (payload: any) => {
+        .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'device_status' }, (_payload: any) => {
             // Status updated -> Device is ONLINE
             isConnected.value = true;
             clearTimeout(responseTimer);
