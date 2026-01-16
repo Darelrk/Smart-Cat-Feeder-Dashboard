@@ -47,7 +47,7 @@ const fetchData = async () => {
     
     if (data) {
         sensorData.value = data;
-        isConnected.value = true;
+        // Don't set isConnected=true here. Wait for heartbeat.
     }
 }
 
